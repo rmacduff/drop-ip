@@ -21,7 +21,7 @@ curr_ip=$( curl -s $IP_URL )
 [[ ! -d $DROPIP_DIR ]] && mkdir $DROPIP_DIR
 
 # Retrieve stored IP
-[[ -e $DROPBOX_DIR/$IP_FILE ]] && old_ip=$( cat $DROPBOX_DIR/$IP_FILE ) 
+[[ -e $DROPIP_DIR/$IP_FILE ]] && old_ip=$( cat $DROPIP_DIR/$IP_FILE ) 
 
 # Update to new IP only if changed
 if [[ ${curr_ip// /} != ${old_ip// /} ]]
